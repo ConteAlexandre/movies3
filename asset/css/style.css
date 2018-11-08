@@ -17,6 +17,7 @@
   margin: 0 auto;
   width: 100%;
   max-width: 60%;
+  /* background-color: black; */
 
 }
 .year {
@@ -29,7 +30,6 @@ img {
       max-width: 400px;
       margin: 0 auto;
       padding: 0 10px;
-      height:
 }
 
 li{
@@ -54,9 +54,10 @@ nav{
     width: 100%;
     margin: 0 auto;
 }
-ul{
+.container .wrap ul{
   float: right;
   padding-right: 5px;
+  padding-top: 20px;
 
 }
 .image{
@@ -73,11 +74,25 @@ ul{
   font-size: 1.3em;
 }
 
-body{
-  background-color: black;
-  color: white;
+.filtre ul li{
+  text-align: left;
+  float: left;
+  width: 20%;
+}
+.filtres h1{
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.filtres h2{
+  font-size: 1.2em;
+}
+
+/* body{
+  background-color: white;
 }
 
 .background{
-  background-color: white;
-}
+  background-color: black;
+
+} */
