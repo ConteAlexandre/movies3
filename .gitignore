@@ -1,13 +1,9 @@
 # ignore le fichier pdo
 pdo.php
-<<<<<<< HEAD
-
-posters\
-=======
 # ignore les fichiers .jpg
 *.jpg
 # ignore les fichiers sql
 *.sql
 # ignore les fichiers ds_store
 *.DS_Store
->>>>>>> 44484cd56d42afbf368eeb990f9f5d87230617ab
+
