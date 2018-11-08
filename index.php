@@ -1,15 +1,19 @@
 <?php
-include('inc/header.php');
+$titlepage = "Accueil";
 include('inc/function.php');
 include('inc/pdo.php');
 
  ?>
 
 <?php
+
+
 $sql="SELECT * FROM movies_full ORDER BY rand() LIMIT 9";
 $query = $pdo -> prepare($sql);
 $query -> execute();
 $movies = $query -> fetchAll();
+
+include('inc/header.php');
 ?>
 
 <div class="wrap">

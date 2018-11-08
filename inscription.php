@@ -1,4 +1,5 @@
 <?php
+$titlepage = "inscription";
 include('inc/pdo.php');
 include('inc/function.php');
 
@@ -87,7 +88,7 @@ if (count($errors) == 0) {
       $query->execute();
 
 
-  header('Location: connection.php');
+  header('Location: connexion.php');
 
 
 }
