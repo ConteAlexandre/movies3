@@ -1,1 +1,61 @@
 @import 'reset.css';
+
+.titre {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px ;
+}
+.film {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  float: left;
+  width: 33.333333333333333%;
+  height: 600px;
+
+}
+.wrap{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80%;
+
+}
+.year {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0 10px;
+      height:
+}
+
+li{
+  padding-right: 5px;
+
+}
+.logo{
+  width: 100%;
+  max-width: 200px;
+  float: left;
+}
+
+nav{
+  height: 100px;
+  float: right;
+  /* padding-right: 20px; */
+
+}
+.container{
+    background-color: #E7E8EB;
+    height: 100px;
+}
+ul{
+  float: right;
+
+}
+.image{
+  height: 500px;
+}

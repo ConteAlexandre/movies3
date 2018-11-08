@@ -1,2 +1,4 @@
-# ignore le fichier pdo 
+# ignore le fichier pdo
 pdo.php
+
+posters\
