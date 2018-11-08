@@ -4,7 +4,7 @@
 //  CONSIDERATIONS TECHNIQUES
 //======================================================================
 
-// La base de données est dans le fichier .sql joint. La table se nomme « all_movies »
+// La base de données est dans le fichier .sql joint. La table se nomme « all_movies »git 
 // Les images se trouvent dans le dossier posters sont au format .jpg, et sont nommées comme l’id des films. Vous pouvez les hotlinker directement. Elles ont toutes la même largeur, mais des hauteurs différentes.
   // Faire en sorte d'ignorer le dossier "poster" pour éviter de le versionner, ainsi que votre fichier pdo.php qui contient des informations sensible, ainsi que le dossier vendor dans le cas d'une utilisation de composer.
 
