@@ -2,3 +2,5 @@
 pdo.php
 # ignore les fichiers .jpg
 .jpg
+# ignore les fichiers sql
+.sql
