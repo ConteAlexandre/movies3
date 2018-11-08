@@ -4,3 +4,5 @@ pdo.php
 *.jpg
 # ignore les fichiers sql
 *.sql
+# ignore les fichiers ds_store
+*.DS_Store
