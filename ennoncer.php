@@ -45,6 +45,20 @@
 //  ETAPE 2
 //======================================================================
 
+Drame
+Fantaisie
+Romantique
+Action
+Thriller
+Comédie
+Aventure
+Animation
+Policier
+Science-fiction
+Horreur
+Mystére
+Musical
+
 //////////////////////    INSCRIPTION/CONNEXION
 //Vous devez créer un système d’inscription et de connexion au site. Vous pouvez bien sûr réutiliser du code que vous auriez précédemment codé pour une telle tâche.
 //Notez qu’il n’est utile que de demander le strict minimum à l’utilisateur : un pseudo, un email et un mot de passe.
