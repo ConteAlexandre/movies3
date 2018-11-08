@@ -1,6 +1,6 @@
 # ignore le fichier pdo 
 pdo.php
 # ignore les fichiers .jpg
-.jpg
+*.jpg
 # ignore les fichiers sql
-.sql
+*.sql
