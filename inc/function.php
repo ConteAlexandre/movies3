@@ -32,13 +32,19 @@ function br(){
   echo '<br>';
 }
 
+function debug($a){
+  echo('<pre>');
+  print_r($a);
+  echo('</pre>');
+}
+
 function remplissageComValue($errors,$post,$key){
   if (!empty($errors)) {
   echo $post[$key];
   }
 }
 
-  function remplissageUpdateValue($err,$var1,$var2,$key){
+  function remplissageUpdateValue($err,$var1,$var2,$key){ //si erreur on recup $post mais si pas d'erreur on envoie le form
     if (!empty($err)) {
       echo $var1[$key];
     }else{
@@ -74,4 +80,20 @@ function isLogged(){
     }
   }
   return false;
+}
+
+//creer une pagination pour lister les films en backoffice
+function paginationfilms($num,$page,$count){
+  echo '<div class="pagination">';
+	if ($page > 1){
+        echo '<a href="films.php?page=' . ($page - 1) . '">Précédent</a>';
+  }
+
+ 	//n'affiche le lien vers la page suivante que s'il y en a un
+ 	//basée sur le count() de MYSQL
+  if ($page*$num < $count) {
+        echo '<a href="films.php?page=' . ($page + 1) . '"">Suivant</a>';
+  }
+
+    echo '</div>';
 }

@@ -87,7 +87,7 @@ if (count($errors) == 0) {
       $query->execute();
 
 
-  header('Location: connection.php');
+  header('Location: connexion.php');
 
 
 }
