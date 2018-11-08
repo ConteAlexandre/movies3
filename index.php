@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
 $titlepage = "Accueil";
-=======
->>>>>>> f10a3af6d941640e7a08e33db85a3220590337f8
 include('inc/function.php');
 include('inc/pdo.php');
 
@@ -16,15 +13,11 @@ $query = $pdo -> prepare($sql);
 $query -> execute();
 $movies = $query -> fetchAll();
 
-<<<<<<< HEAD
-include('inc/header.php');
-=======
 $sql="SELECT * FROM movies_full ";
 $query = $pdo -> prepare($sql);
 $query -> execute();
 $years = $query -> fetchAll();
 
->>>>>>> f10a3af6d941640e7a08e33db85a3220590337f8
 ?>
 
 <?php include('inc/header.php'); ?>
