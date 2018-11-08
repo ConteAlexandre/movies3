@@ -72,3 +72,12 @@ ul{
   padding-bottom: 10px;
   font-size: 1.3em;
 }
+
+body{
+  background-color: black;
+  color: white;
+}
+
+.background{
+  background-color: white;
+}

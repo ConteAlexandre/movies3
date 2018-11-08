@@ -12,9 +12,9 @@ $query -> execute();
 $movies = $query -> fetchAll();
 ?>
 
+
+<div class="background">
 <div class="wrap">
-
-
 <?php
 foreach ($movies as $movie) {
   echo '<div class="film"><a href="detail.php?valeur='. $movie['id'] .'"><img src="posters/' . $movie['id'] . '.jpg" class="image" alt="' . $movie['title'] . '"></a>';
@@ -23,6 +23,7 @@ foreach ($movies as $movie) {
 
 }
 ?>
+
 </div>
 <div class="clear">
 
@@ -30,4 +31,5 @@ foreach ($movies as $movie) {
 
 <div class="bouton">
   <a href="index.php">Voir d'autres films</a>
+</div>
 </div>
