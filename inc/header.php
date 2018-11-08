@@ -2,7 +2,7 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title><?php echo $title; ?></title>
+    <title>Allociné</title>
     <link rel="stylesheet" href="asset/css/style.css">
   </head>
   <body>

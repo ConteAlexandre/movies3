@@ -16,7 +16,7 @@
 .wrap{
   margin: 0 auto;
   width: 100%;
-  max-width: 80%;
+  max-width: 60%;
 
 }
 .year {
@@ -51,11 +51,24 @@ nav{
 .container{
     background-color: #E7E8EB;
     height: 100px;
+    width: 100%;
+    margin: 0 auto;
 }
 ul{
   float: right;
+  padding-right: 5px;
 
 }
 .image{
   height: 500px;
+}
+
+.details{
+  text-align: center;
+}
+
+.bouton{
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 1.3em;
 }

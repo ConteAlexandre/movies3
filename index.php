@@ -27,3 +27,7 @@ foreach ($movies as $movie) {
 <div class="clear">
 
 </div>
+
+<div class="bouton">
+  <a href="index.php">Voir d'autres films</a>
+</div>

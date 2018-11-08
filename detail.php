@@ -29,6 +29,17 @@ if (!empty($_GET['valeur']) && is_numeric($_GET['valeur'])) {
 }
 
 }
+?>
+
+<div class="wrap">
+
+
+<div class="details">
+
+
+<?php
+echo '<img src="posters/' . $movie['id'] . '.jpg" class="image" alt="' . $movie['title'] . '">';
+echo '</br>';
 echo 'Voici les détails de : ' . $movie['title'];
 echo '</br>';
 echo 'Ce film a été produit en : ' . $movie['year'] ;
@@ -43,3 +54,5 @@ echo '</br>';
 
 
  ?>;
+ </div>
+</div>
