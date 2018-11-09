@@ -1,7 +1,7 @@
 <?php
 $titlepage = "Accueil";
-include('inc/function.php');
 include('inc/pdo.php');
+include('inc/function.php');
 
  ?>
 
@@ -70,6 +70,7 @@ $years = $query -> fetchAll();
 
 
 
+
     ?>
 
     <div class="filtres">
@@ -105,7 +106,33 @@ $years = $query -> fetchAll();
 
 <?php
 if (!empty($_POST['submitted'])) {
-  print_r($_POST['recherche']);
+  if (!empty($_POST['recherche'])) {
+    $annees = $_POST['annees'];
+    $recherche = $_POST['recherche'];
+    $variable = "";
+    print_r($recherche);
+      foreach ($recherche as $research) {
+        // print_r($research);
+        $variable .= "OR genres LIKE '%" . $research . "%'";
+      }
+      $sql = "SELECT * FROM movies_full WHERE 1=0 $variable AND year=$annees LIMIT 9";
+      $query = $pdo->prepare($sql);
+      $query->execute();
+      $search = $query->fetchall();
+  }else {
+    $annees = $_POST['annees'];
+    $sql = "SELECT * FROM movies_full WHERE year=$annees LIMIT 9";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $search = $query->fetchall();
+  }
+
+
+
+
+  // print_r($search);
+
+
   } ?>
 
 </form>
@@ -119,12 +146,25 @@ if (!empty($_POST['submitted'])) {
 
 
     <?php
+
+    if (!empty($_POST['submitted'])) {
+      foreach ($search as $searc) {
+        echo '<div class="film"><a href="detail.php?slug='. $searc['slug'] .'"><img src="posters/' . $searc['id'] . '.jpg" class="image" alt="' . $searc['title'] . '"></a>';
+        echo '<div class="titre">' . $searc['title'] . '</div>';
+        echo '<div class="year">' . $searc['year'] . '</div></div>';
+
+      }
+      // code...
+    }else {
+      // code...
+
       foreach ($movies as $movie) {
-        echo '<div class="film"><a href="detail.php?valeur='. $movie['id'] .'"><img src="posters/' . $movie['id'] . '.jpg" class="image" alt="' . $movie['title'] . '"></a>';
+        echo '<div class="film"><a href="detail.php?slug='. $movie['slug'] .'"><img src="posters/' . $movie['id'] . '.jpg" class="image" alt="' . $movie['title'] . '"></a>';
         echo '<div class="titre">' . $movie['title'] . '</div>';
         echo '<div class="year">' . $movie['year'] . '</div></div>';
 
       }
+    }
     ?>
 
   </div>
