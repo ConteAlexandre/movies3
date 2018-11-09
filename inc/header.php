@@ -19,6 +19,7 @@
           <ul>
             <?php if (isLogged()) {
               ?><li> <a href="deconnexion.php">Logout</a> </li><?php
+              ?><li><a href="filmavoir.php">Film A Voir !</a> </li> <?php
             }else {
               ?><li> <a href="connexion.php">Login</a> </li>
               <li> <a href="inscription.php">Sign in</a> </li><?php
