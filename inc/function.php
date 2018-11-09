@@ -7,10 +7,6 @@ function formVerif($errors,$data,$min,$max,$key,$empty = true){
     } elseif (strlen($data) > $max) {
       $errors[$key] = 'Maximum de '.$max.' caracteres';
     }
-  }else {
-    if ($empty) {
-      $errors[$key] = 'veuillez renseigner ce champ';
-    }
   }
 
   return $errors;
