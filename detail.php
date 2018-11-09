@@ -2,26 +2,24 @@
 $titlepage = "Detail";
 include('inc/pdo.php');
 include('inc/function.php');
-include('inc/header.php');
-?>
 
 
-
-<?php
 global $movies;
-global $valeur;
+global $slug;
 global $film;
-if (!empty($_GET['valeur']) && is_numeric($_GET['valeur'])) {
-  $valeur = $_GET['valeur'];
-  $sql="SELECT * FROM movies_full WHERE id = :id";
+
+if (!empty($_GET['slug'])) {
+  $slug = trim(strip_tags($_GET['slug']));
+  // $slug = $_GET['slug'];
+  $sql="SELECT * FROM movies_full WHERE slug = :slug";
   $query = $pdo -> prepare($sql);
-  $query -> bindValue(':id', $valeur);
+  $query -> bindValue(':slug', $slug);
   $query -> execute();
   $movies = $query -> fetchAll();
 
 
   foreach ($movies as $movie) {
-    if ($valeur == $movie['id']) {
+    if ($slug == $movie['slug']) {
       $film = $movie;
     }
     else {
@@ -30,6 +28,8 @@ if (!empty($_GET['valeur']) && is_numeric($_GET['valeur'])) {
 }
 
 }
+include('inc/header.php');
+
 ?>
 
 <div class="wrap">
@@ -39,6 +39,7 @@ if (!empty($_GET['valeur']) && is_numeric($_GET['valeur'])) {
 
 
   <?php
+
   echo '<img src="posters/' . $movie['id'] . '.jpg" class="image" alt="' . $movie['title'] . '">';
   echo '</br>';
   echo 'Voici les détails de : ' . $movie['title'];
