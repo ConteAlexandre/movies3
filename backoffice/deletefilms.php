@@ -25,7 +25,7 @@
 
 <p>Voulez vous supprimer ce film?</p>
 <form action="" method="post">
-<input type="submit" name="submittedoui" value="OUI">
+<input type="submit" name="submittedoui" value="OUI" class="btn btn-outline">
 <input type="submit" name="submittednon" value="NON">
 </form>
 

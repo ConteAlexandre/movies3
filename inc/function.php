@@ -115,15 +115,15 @@ function isadmin(){
 }
 //creer une pagination pour lister les films en backoffice
 function paginationfilms($num,$page,$count){
-  echo '<div class="pagination">';
+  echo '<div class="col-sm-6 dataTables_paginatepaging_simple_numbers pagination">';
 	if ($page > 1){
-        echo '<a href="films.php?page=' . ($page - 1) . '">Précédent</a>';
+        echo '<a href="films.php?page=' . ($page - 1) . '" class="paginate_button previous">Précédent</a>';
   }
 
  	//n'affiche le lien vers la page suivante que s'il y en a un
  	//basée sur le count() de MYSQL
   if ($page*$num < $count) {
-        echo '<a href="films.php?page=' . ($page + 1) . '"">Suivant</a>';
+        echo '<a href="films.php?page=' . ($page + 1) . '" class="paginate_button next disabled">Suivant</a>';
   }
 
     echo '</div>';

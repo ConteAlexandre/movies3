@@ -12,7 +12,7 @@ if (!empty($_GET['page'])) {
     $offset= $page*$num-$num;
 }
 //requete pour appeler la table movie full et selectionner tout, puis ensuite on limit a 100 et aussi on definit par quels films on commence
-    $sql = "SELECT * FROM movies_full ORDER BY id LIMIT $offset,$num";
+    $sql = "SELECT * FROM movies_full ORDER BY title LIMIT $offset,$num";
     $query = $pdo->prepare($sql);
     $query->execute();
     $listingfilms = $query->fetchAll();
@@ -32,7 +32,7 @@ if (!empty($_GET['page'])) {
 
     <?php paginationfilms($num,$page,$count); ?>
 
-<table class="listingfilms">
+<table class="listingfilms table table-striped table-bordered table-hover dataTable no-footer dtr-inline">
     <tr>
         <td>ID</td>
         <td>Title</td>
