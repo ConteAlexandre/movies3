@@ -2,6 +2,7 @@
 
 <?php include('../inc/pdo.php'); ?>
 <?php include('../inc/function.php'); ?>
+<?php if(isadmin()){?>
 
 <?php 
     //requete pour aller cherche le nombre d'users qui se sont enregistre
@@ -50,3 +51,7 @@
 
 
 <?php include('inc/footerb.php'); ?>
+
+<?php }else {
+    die('403');
+} ?>

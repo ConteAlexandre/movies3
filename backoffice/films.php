@@ -43,7 +43,7 @@ if (!empty($_GET['page'])) {
     <?php 
     //boucle pour pouvoir afficher les films dans la table avec la caractéristiques demandé
         foreach ($listingfilms as $listingfilm) {
-            echo('<tr><td>'.$listingfilm['id'].'</td><td>'.$listingfilm['title'].'</td><td>'.$listingfilm['year'].'</td><td>'.$listingfilm['rating'].'</td><td><a href="../detail.php?valeur='.$listingfilm['id'].'">Voir sur site</a><br><a href="modifierfilm.php?id='.$listingfilm['id'].'">Modifier</a><br><a href="#">Effacer</a></td></tr>');
+            echo('<tr><td>'.$listingfilm['id'].'</td><td>'.$listingfilm['title'].'</td><td>'.$listingfilm['year'].'</td><td>'.$listingfilm['rating'].'</td><td><a href="../detail.php?valeur='.$listingfilm['id'].'">Voir sur site</a><br><a href="modifierfilm.php?id='.$listingfilm['id'].'">Modifier</a><br><a href="deletefilms.php?id='.$listingfilm['id'].'">Effacer</a></td></tr>');
         }
     ?>
 </table>
