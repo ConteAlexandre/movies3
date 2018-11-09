@@ -15,6 +15,22 @@ function formVerif($errors,$data,$min,$max,$key,$empty = true){
 
   return $errors;
 }
+function formVerifNmb($errors,$data,$min,$max,$key,$empty = true){
+  if (!empty($data)) {
+    if (strlen((string)$data) < $min) {
+      $errors[$key] = 'Minimum de '.$min.' caracteres';
+    } elseif (strlen((string)$data) > $max) {
+      $errors[$key] = 'Maximum de '.$max.' caracteres';
+    }
+  }else {
+    if ($empty) {
+      $errors[$key] = 'veuillez renseigner ce champ';
+    }
+  }
+
+  return $errors;
+}
+
 
 function afficheErrors($errors,$key){
 ?>
@@ -81,18 +97,33 @@ function isLogged(){
   }
   return false;
 }
-
+function isadmin(){
+  if (!empty($_SESSION['user'])) {
+    if (!empty($_SESSION['user']['id'])) {
+      if (!empty($_SESSION['user']['email'])) {
+        if (!empty($_SESSION['user']['role'])&&$_SESSION['user']['role']=='admin') {
+          if (!empty($_SESSION['user']['ip'])) {
+            if ($_SESSION['user']['ip'] == $_SERVER['REMOTE_ADDR']) {
+              return true;
+            }
+          }
+        }
+      }
+    }
+  }
+  return false;
+}
 //creer une pagination pour lister les films en backoffice
 function paginationfilms($num,$page,$count){
-  echo '<div class="pagination">';
+  echo '<div class="col-sm-6 dataTables_paginatepaging_simple_numbers pagination">';
 	if ($page > 1){
-        echo '<a href="films.php?page=' . ($page - 1) . '">Précédent</a>';
+        echo '<a href="films.php?page=' . ($page - 1) . '" class="paginate_button previous">Précédent</a>';
   }
 
  	//n'affiche le lien vers la page suivante que s'il y en a un
  	//basée sur le count() de MYSQL
   if ($page*$num < $count) {
-        echo '<a href="films.php?page=' . ($page + 1) . '"">Suivant</a>';
+        echo '<a href="films.php?page=' . ($page + 1) . '" class="paginate_button next disabled">Suivant</a>';
   }
 
     echo '</div>';

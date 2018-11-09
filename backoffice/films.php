@@ -12,7 +12,7 @@ if (!empty($_GET['page'])) {
     $offset= $page*$num-$num;
 }
 //requete pour appeler la table movie full et selectionner tout, puis ensuite on limit a 100 et aussi on definit par quels films on commence
-    $sql = "SELECT * FROM movies_full ORDER BY id LIMIT $offset,$num";
+    $sql = "SELECT * FROM movies_full ORDER BY title LIMIT $offset,$num";
     $query = $pdo->prepare($sql);
     $query->execute();
     $listingfilms = $query->fetchAll();
@@ -32,7 +32,7 @@ if (!empty($_GET['page'])) {
 
     <?php paginationfilms($num,$page,$count); ?>
 
-<table class="listingfilms">
+<table class="listingfilms table table-striped table-bordered table-hover dataTable no-footer dtr-inline">
     <tr>
         <td>ID</td>
         <td>Title</td>
@@ -43,7 +43,7 @@ if (!empty($_GET['page'])) {
     <?php 
     //boucle pour pouvoir afficher les films dans la table avec la caractéristiques demandé
         foreach ($listingfilms as $listingfilm) {
-            echo('<tr><td>'.$listingfilm['id'].'</td><td>'.$listingfilm['title'].'</td><td>'.$listingfilm['year'].'</td><td>'.$listingfilm['rating'].'</td><td><a href="../detail.php?valeur='.$listingfilm['id'].'">Voir sur site</a><br><a href="modifierfilm.php?id='.$listingfilm['id'].'">Modifier</a><br><a href="#">Effacer</a></td></tr>');
+            echo('<tr><td>'.$listingfilm['id'].'</td><td>'.$listingfilm['title'].'</td><td>'.$listingfilm['year'].'</td><td>'.$listingfilm['rating'].'</td><td><a href="../detail.php?valeur='.$listingfilm['id'].'">Voir sur site</a><br><a href="modifierfilm.php?id='.$listingfilm['id'].'">Modifier</a><br><a href="deletefilms.php?id='.$listingfilm['id'].'">Effacer</a></td></tr>');
         }
     ?>
 </table>
