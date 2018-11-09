@@ -53,7 +53,7 @@ if (!empty($movies)) {
   }
 
   foreach ($movies as $movie) {
-    echo '<div class=""><a href="detail.php?valeur='. $movie['id'] .'"><img src="posters/' . $movie['id'] . '.jpg" class="" alt="' . $movie['title'] . '"></a>';
+    echo '<div class=""><a href="detail.php?slug='. $movie['slug'] .'"><img src="posters/' . $movie['id'] . '.jpg" class="" alt="' . $movie['title'] . '"></a>';
     echo '<div class="">' . $movie['title'] . '</div>';
     echo '<div class="">' . $movie['year'] . '</div></div>';
     ?>
