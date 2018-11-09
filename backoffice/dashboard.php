@@ -26,13 +26,13 @@
 
 <?php include('inc/headerb.php'); ?>
 
-<h1 class="titlestats">Bienvenu sur le Back-Office</h1>
+<h1 class="panel-heading">Bienvenue sur le Back-Office</h1>
 <div class="filmsbdd">
-    <h2>Nombre de films total</h2>
+    <h2 class="panel-heading">Nombre de films total</h2>
     <p>Vous avez actuellement <?php echo($statsfilm); ?> films sur votre site</p>
 </div>
 <div class="statusers">
-    <h2>Voici les Statistiques du nombre d'utilisateurs enregistrés: </h2>
+    <h2 class="panel-heading">Voici les Statistiques du nombre d'utilisateurs enregistrés: </h2>
     <p>Vous avez actuellement <?php echo($statsusers); ?> utilisateurs inscrits sur votre site.</p>
     <?php 
         if ($statsusers < 10) {

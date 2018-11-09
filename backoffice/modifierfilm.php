@@ -69,9 +69,8 @@
             $query2->bindValue(':id', $id, PDO::PARAM_INT);
             $query2->execute();
             header('Location: films.php');
-        }else {
-            die('../404.php');
         }
+        
     }
 
 ?>
@@ -84,52 +83,52 @@
 <form action="" method="post">
     
     <label for="slug">Slug: </label>
-    <span class="errors"><?php if (!empty($errors['slug'])) { echo $errors['slug']; } ?></span>
-    <br><input type="text" name="slug" id="slug" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'slug'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['slug'])) { echo $errors['slug']; } ?></span>
+    <br><input type="text" class="form-control" name="slug" id="slug" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'slug'); ?>">
 
     <br><label for="title">Title: </label>
-    <span class="errors"><?php if (!empty($errors['title'])) { echo $errors['title']; } ?></span>
-    <br><input type="text" name="title" id="title" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'title'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['title'])) { echo $errors['title']; } ?></span>
+    <br><input type="text" class="form-control" name="title" id="title" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'title'); ?>">
 
     <br><label for="year">Year: </label>
-    <span class="errors"><?php if (!empty($errors['year'])) { echo $errors['year']; } ?></span>
-    <br><input type="text" name="year" id="year" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'year'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['year'])) { echo $errors['year']; } ?></span>
+    <br><input type="text" class="form-control" name="year" id="year" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'year'); ?>">
 
     <br><label for="genres">Genres: </label>
-    <span class="errors"><?php if (!empty($errors['genres'])) { echo $errors['genres']; } ?></span>
-    <br><input type="text" name="genres" id="genres" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'genres'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['genres'])) { echo $errors['genres']; } ?></span>
+    <br><input type="text" class="form-control" name="genres" id="genres" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'genres'); ?>">
 
     <br><label for="plot">Plot: </label>
-    <span class="errors"><?php if (!empty($errors['plot'])) { echo $errors['plot']; } ?></span>
-    <br><input type="text" name="plot" id="plot" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'plot'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['plot'])) { echo $errors['plot']; } ?></span>
+    <br><input type="text" class="form-control" name="plot" id="plot" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'plot'); ?>">
 
     <br><label for="directors">Directors: </label>
-    <span class="errors"><?php if (!empty($errors['directors'])) { echo $errors['directors']; } ?></span>
-    <br><input type="text" name="directors" id="directors" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'directors'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['directors'])) { echo $errors['directors']; } ?></span>
+    <br><input type="text" class="form-control" name="directors" id="directors" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'directors'); ?>">
 
     <br><label for="cast">Cast: </label>
-    <span class="errors"><?php if (!empty($errors['cast'])) { echo $errors['cast']; } ?></span>
-    <br><input type="text" name="cast" id="cast" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'cast'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['cast'])) { echo $errors['cast']; } ?></span>
+    <br><input type="text" class="form-control" name="cast" id="cast" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'cast'); ?>">
 
     <br><label for="writers">Writers: </label>
-    <span class="errors"><?php if (!empty($errors['writers'])) { echo $errors['writers']; } ?></span>
-    <br><input type="text" name="writers" id="writers" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'writers'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['writers'])) { echo $errors['writers']; } ?></span>
+    <br><input type="text" class="form-control" name="writers" id="writers" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'writers'); ?>">
 
     <br><label for="runtime">Runtime: </label>
-    <span class="errors"><?php if (!empty($errors['runtime'])) { echo $errors['runtime']; } ?></span>
-    <br><input type="text" name="runtime" id="runtime" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'runtime'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['runtime'])) { echo $errors['runtime']; } ?></span>
+    <br><input type="text" class="form-control" name="runtime" id="runtime" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'runtime'); ?>">
 
     <br><label for="mpaa">Mpaa: </label>
     <span class="errors"><?php if (!empty($errors['mpaa'])) { echo $errors['mpaa']; } ?></span>
-    <br><input type="text" name="mpaa" id="mpaa" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'mpaa'); ?>">
+    <br><input type="text" class="form-control" name="mpaa" id="mpaa" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'mpaa'); ?>">
 
     <br><label for="rating">Rating: </label>
-    <span class="errors"><?php if (!empty($errors['rating'])) { echo $errors['rating']; } ?></span>
-    <br><input type="text" name="rating" id="rating" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'rating'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['rating'])) { echo $errors['rating']; } ?></span>
+    <br><input type="text" class="form-control" name="rating" id="rating" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'rating'); ?>">
 
     <br><label for="popularity">Popularity: </label>
-    <span class="errors"><?php if (!empty($errors['popularity'])) { echo $errors['popularity']; } ?></span>
-    <br><input type="text" name="popularity" id="popularity" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'popularity'); ?>">
+    <span class="text-danger"><?php if (!empty($errors['popularity'])) { echo $errors['popularity']; } ?></span>
+    <br><input type="text" class="form-control" name="popularity" id="popularity" value="<?php remplissageUpdateValue($errors,$_POST,$movie,'popularity'); ?>">
 
     <br><input type="submit" name="submittedmovie" value="ENVOYER">
 </form>
