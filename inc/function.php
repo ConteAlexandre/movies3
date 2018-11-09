@@ -15,6 +15,22 @@ function formVerif($errors,$data,$min,$max,$key,$empty = true){
 
   return $errors;
 }
+function formVerifNmb($errors,$data,$min,$max,$key,$empty = true){
+  if (!empty($data)) {
+    if (strlen((string)$data) < $min) {
+      $errors[$key] = 'Minimum de '.$min.' caracteres';
+    } elseif (strlen((string)$data) > $max) {
+      $errors[$key] = 'Maximum de '.$max.' caracteres';
+    }
+  }else {
+    if ($empty) {
+      $errors[$key] = 'veuillez renseigner ce champ';
+    }
+  }
+
+  return $errors;
+}
+
 
 function afficheErrors($errors,$key){
 ?>
@@ -81,7 +97,22 @@ function isLogged(){
   }
   return false;
 }
-
+function isadmin(){
+  if (!empty($_SESSION['user'])) {
+    if (!empty($_SESSION['user']['id'])) {
+      if (!empty($_SESSION['user']['email'])) {
+        if (!empty($_SESSION['user']['role'])&&$_SESSION['user']['role']=='admin') {
+          if (!empty($_SESSION['user']['ip'])) {
+            if ($_SESSION['user']['ip'] == $_SERVER['REMOTE_ADDR']) {
+              return true;
+            }
+          }
+        }
+      }
+    }
+  }
+  return false;
+}
 //creer une pagination pour lister les films en backoffice
 function paginationfilms($num,$page,$count){
   echo '<div class="pagination">';
