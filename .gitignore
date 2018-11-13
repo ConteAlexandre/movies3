@@ -8,3 +8,6 @@ posters\
 *.sql
 # ignore les fichiers ds_store
 *.DS_Store
+# ignore les fichiers xml et iml
+.xml
+.iml
